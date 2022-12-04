@@ -2,4 +2,4 @@
 
 set -eo pipefail
 
-../bin/sc-server -c ../ostis-example-app.ini 
+../bin/sc-server -c ../personal-trainer-app.ini

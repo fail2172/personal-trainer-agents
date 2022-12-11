@@ -8,19 +8,17 @@
 #include "keynodes/UserKeynodes.hpp"
 
 namespace userModule {
-std::string const UserTemplates::USER_ACCESS_ARC_ALIAS =
-    "_user_access_arc_alias";
+std::string const UserTemplates::USER_ACCESS_ARC_ALIAS = "_user_access_arc";
 std::string const UserTemplates::USER_ALIAS = "_user";
 std::string const UserTemplates::LOGIN_ALIAS = "_login";
 std::string const UserTemplates::PASSWORD_ALIAS = "_password";
 std::string const UserTemplates::LOGIN_RELATION_PAIR_ALIAS =
-    "_login_relation_pair_alias";
-std::string const UserTemplates::LOGIN_ACCESS_ARC_ALIAS =
-    "_login_access_arc_alias";
+    "_login_relation_pair";
+std::string const UserTemplates::LOGIN_ACCESS_ARC_ALIAS = "_login_access_arc";
 std::string const UserTemplates::PASSWORD_RELATION_PAIR_ALIAS =
-    "_password_relation_pair_alias";
+    "_password_relation_pair";
 std::string const UserTemplates::PASSWORD_ACCESS_ARC_ALIAS =
-    "_password_access_arc_alias";
+    "_password_access_arc";
 
 std::unique_ptr<ScTemplate>
 UserTemplates::receiveUserTemplate(const ScAddr &loginLink,

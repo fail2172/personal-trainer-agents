@@ -1,6 +1,0 @@
-test_question_node
-<- action_create_user;
-<- question;
--> rrel_1: [sova];
--> rrel_2: [12345];;
-

@@ -1,11 +1,17 @@
 set(SOURCES
         "agent/CreateUserAgent.cpp"
         "agent/SearchUserAgent.cpp"
+        "agent/UpdateUserAgent.cpp"
+        "generator/UserDiseasesGenerator.cpp"
         "generator/UserGenerator.cpp"
         "keynodes/UserKeynodes.cpp"
         "manager/CreateUserManager.cpp"
+        "manager/UpdateUserManager.cpp"
         "searcher/LoginSearcher.cpp"
         "searcher/UserSearcher.cpp"
+        "template/DiseaseListTemplates.hpp"
+        "template/DiseaseListTemplates.cpp"
+        "template/UserParamsTemplates.cpp"
         "template/UserTemplates.cpp"
         "UserModule.cpp"
         )
@@ -13,12 +19,16 @@ set(SOURCES
 set(HEADERS
         "agent/CreateUserAgent.hpp"
         "agent/SearchUserAgent.hpp"
+        "agent/UpdateUserAgent.hpp"
+        "generator/UserDiseasesGenerator.hpp"
         "generator/UserGenerator.hpp"
         "keynodes/UserKeynodes.hpp"
         "manager/CreateUserManager.hpp"
+        "manager/UpdateUserManager.hpp"
         "searcher/LoginSearcher.hpp"
         "searcher/UserSearcher.hpp"
         "template/UserTemplates.hpp"
+        "template/UserParamsTemplates.hpp"
         "UserModule.hpp"
         )
 
@@ -40,7 +50,3 @@ target_link_libraries(
 )
 
 sc_codegen_ex(userModule ${CMAKE_CURRENT_LIST_DIR} ${CMAKE_CURRENT_LIST_DIR}/generated)
-
-if (${SC_BUILD_TESTS})
-    include(${CMAKE_CURRENT_LIST_DIR}/test/tests.cmake)
-endif ()

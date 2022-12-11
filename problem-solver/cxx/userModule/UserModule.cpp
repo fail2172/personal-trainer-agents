@@ -7,6 +7,7 @@
 
 #include "agent/CreateUserAgent.hpp"
 #include "agent/SearchUserAgent.hpp"
+#include "agent/UpdateUserAgent.hpp"
 
 #include "keynodes/UserKeynodes.hpp"
 
@@ -31,12 +32,18 @@ sc_result UserModule::InitializeImpl() {
   else
     SC_AGENT_REGISTER(SearchUserAgent);
 
+  if (ActionUtils::isActionDeactivated(&ctx, UserKeynodes::action_update_user))
+    SC_LOG_DEBUG("action_update_user is deactivated");
+  else
+    SC_AGENT_REGISTER(UpdateUserAgent);
+
   return SC_RESULT_OK;
 }
 
 sc_result UserModule::ShutdownImpl() {
   SC_AGENT_UNREGISTER(CreateUserAgent)
   SC_AGENT_UNREGISTER(SearchUserAgent)
+  SC_AGENT_UNREGISTER(UpdateUserAgent)
 
   return SC_RESULT_OK;
 }

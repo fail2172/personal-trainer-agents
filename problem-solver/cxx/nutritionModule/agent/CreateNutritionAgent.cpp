@@ -39,7 +39,7 @@ SC_AGENT_IMPLEMENTATION(CreateNutritionAgent) {
   } catch (utils::ScException &e) {
     utils::AgentUtils::finishAgentWork(&m_memoryCtx, actionAddr, answerVector,
                                        false);
-    SC_LOG_ERROR(e.Description());
+    SC_LOG_ERROR("CreateNutritionAgent: finished with exception");
     return SC_RESULT_ERROR;
   }
 

@@ -17,6 +17,8 @@ UserGenerator::UserGenerator(ScMemoryContext *context) : context(context) {
 
 ScAddrVector UserGenerator::createUser(const ScAddr &loginLink,
                                        const ScAddr &passwordLink) {
+  SC_LOG_DEBUG("UserGenerator: start");
+
   std::unique_ptr<ScTemplate> userConstructionTemplate =
       userTemplates->receiveUserTemplate(loginLink, passwordLink);
 
@@ -33,7 +35,7 @@ ScAddrVector UserGenerator::createUser(const ScAddr &loginLink,
     SC_THROW_EXCEPTION(utils::ExceptionCritical,
                        "UserGenerator: User has not been created");
 
-  SC_LOG_DEBUG("UserGenerator: User created");
+  SC_LOG_DEBUG("UserGenerator: finish");
 
   return {
       UserKeynodes::concept_user,

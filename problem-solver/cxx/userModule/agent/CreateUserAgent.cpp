@@ -17,7 +17,7 @@ SC_AGENT_IMPLEMENTATION(CreateUserAgent) {
   if (checkActionClass(actionAddr) == SC_FALSE)
     return SC_RESULT_OK;
 
-  SC_LOG_DEBUG("CreateUserAgent: CreateUserAgent started");
+  SC_LOG_DEBUG("CreateUserAgent: start");
 
   ScAddrVector answerVector;
   initFields();
@@ -41,7 +41,7 @@ SC_AGENT_IMPLEMENTATION(CreateUserAgent) {
 
   utils::AgentUtils::finishAgentWork(&m_memoryCtx, actionAddr, answerVector,
                                      true);
-  SC_LOG_DEBUG("CreateUserAgent: CreateUserAgent finished");
+  SC_LOG_DEBUG("CreateUserAgent: finish");
   return SC_RESULT_OK;
 }
 

@@ -3,27 +3,33 @@
  * Author: Artsiom Salauyou
  */
 
-#include "CreateUserManager.hpp"
-
 #include "keynodes/UserKeynodes.hpp"
+
+#include "CreateUserManager.hpp"
 
 using namespace userModule;
 
 CreateUserManager::CreateUserManager(ScMemoryContext *context)
     : AgentManager(context) {
   this->userGenerator = std::make_unique<UserGenerator>(context);
-  this->loginSearcher = std::make_unique<LoginSearcher>(context);
+  this->userSearcher = std::make_unique<UserSearcher>(context);
 }
 
-ScAddrVector userModule::CreateUserManager::manage(
-    const ScAddrVector &processParameters) const {
+ScAddrVector
+CreateUserManager::manage(const ScAddrVector &processParameters) const {
+  SC_LOG_DEBUG("CreateUserManager: start");
+
   ScAddr loginLink = processParameters[0];
   ScAddr passwordLink = processParameters[1];
 
-  if (loginSearcher->searchLogin(context->GetLinkContent(loginLink)).IsValid())
+  if (!userSearcher->searchUserByLogin(loginLink).empty())
     SC_THROW_EXCEPTION(
         utils::ExceptionInvalidParams,
         "CreateUserManager: User with this login already exists");
 
-  return userGenerator->createUser(loginLink, passwordLink);
+  ScAddrVector answerVector = userGenerator->createUser(loginLink, passwordLink);
+
+  SC_LOG_DEBUG("CreateUserManager: finish");
+
+  return answerVector;
 }

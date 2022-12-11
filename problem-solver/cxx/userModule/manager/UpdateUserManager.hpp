@@ -8,20 +8,20 @@
 #include <sc-memory/sc_addr.hpp>
 #include <sc-memory/sc_memory.hpp>
 
-#include "generator/UserGenerator.hpp"
+#include "generator/UserDiseasesGenerator.hpp"
 
 #include "manager/AgentManager.hpp"
 
 #include "searcher/UserSearcher.hpp"
 
 namespace userModule {
-class CreateUserManager : public commonModule::AgentManager {
+class UpdateUserManager : public commonModule::AgentManager {
 private:
-  std::unique_ptr<UserGenerator> userGenerator;
   std::unique_ptr<UserSearcher> userSearcher;
+  std::unique_ptr<UserDiseasesGenerator> addUserDiseases;
 
 public:
-  explicit CreateUserManager(ScMemoryContext *context);
+  explicit UpdateUserManager(ScMemoryContext *context);
 
   ScAddrVector manage(ScAddrVector const &processParameters) const override;
 };

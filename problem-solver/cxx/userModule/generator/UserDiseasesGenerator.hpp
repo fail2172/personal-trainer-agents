@@ -8,23 +8,17 @@
 #include <sc-memory/sc_addr.hpp>
 #include <sc-memory/sc_memory.hpp>
 
-#include "searcher/LoginSearcher.hpp"
-
 #include "template/UserTemplates.hpp"
 
 namespace userModule {
-class UserSearcher {
+class UserDiseasesGenerator {
 private:
   ScMemoryContext *context;
 
-  std::unique_ptr<UserTemplates> userTemplates;
-  std::unique_ptr<LoginSearcher> loginSearcher;
-
 public:
-  static int const USER_INDEX;
+  explicit UserDiseasesGenerator(ScMemoryContext *context);
 
-  explicit UserSearcher(ScMemoryContext *context);
-
-  ScAddrVector searchUserByLogin(const ScAddr &loginLink);
+  ScAddrVector addDiseasesToUser(ScAddr const &userAddr,
+                                 ScAddrVector const &diseases);
 };
 } // namespace userModule

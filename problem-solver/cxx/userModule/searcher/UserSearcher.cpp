@@ -7,7 +7,8 @@
 
 #include "UserSearcher.hpp"
 
-using namespace userModule;
+namespace userModule {
+int const UserSearcher::USER_INDEX = 2;
 
 UserSearcher::UserSearcher(ScMemoryContext *context) : context(context) {
   this->userTemplates = std::make_unique<UserTemplates>();
@@ -15,11 +16,14 @@ UserSearcher::UserSearcher(ScMemoryContext *context) : context(context) {
 }
 
 ScAddrVector UserSearcher::searchUserByLogin(const ScAddr &loginLink) {
+  SC_LOG_DEBUG("UserSearcher: start");
+
   ScAddr registeredLogin =
       loginSearcher->searchLogin(context->GetLinkContent(loginLink));
 
   if (!registeredLogin.IsValid()) {
-    SC_LOG_WARNING("UserSearcher: User not found");
+    SC_LOG_DEBUG("UserSearcher: User not found");
+      SC_LOG_DEBUG("UserSearcher: finish");
     return {};
   }
 
@@ -38,7 +42,11 @@ ScAddrVector UserSearcher::searchUserByLogin(const ScAddr &loginLink) {
   ScTemplateSearchResultItem userConstructionTemplateResult =
       userConstructionTemplateResults[0];
 
-  SC_LOG_DEBUG("UserSearcher: User found");
+  if (!userConstructionTemplateResult.Size())
+    SC_THROW_EXCEPTION(utils::ExceptionCritical,
+                       "UserSearcher: No user with such login");
+
+  SC_LOG_DEBUG("UserSearcher: finish");
 
   return {
       UserKeynodes::concept_user,
@@ -54,3 +62,4 @@ ScAddrVector UserSearcher::searchUserByLogin(const ScAddr &loginLink) {
       userConstructionTemplateResult[UserTemplates::PASSWORD_ACCESS_ARC_ALIAS],
       UserKeynodes::nrel_password};
 }
+} // namespace userModule

@@ -21,5 +21,4 @@ ScAddr NutritionKeynodes::concept_nutrition_id;
 ScAddr NutritionKeynodes::nrel_breakfast;
 ScAddr NutritionKeynodes::nrel_lunch;
 ScAddr NutritionKeynodes::nrel_dinner;
-ScAddr NutritionKeynodes::nrel_diet_id;
 } // namespace nutritionModule

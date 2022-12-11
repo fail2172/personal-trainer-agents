@@ -4,6 +4,7 @@
  */
 #include "NutritionTemplates.hpp"
 
+#include "keynodes/Keynodes.hpp"
 #include "keynodes/NutritionKeynodes.hpp"
 
 namespace nutritionModule {
@@ -44,7 +45,7 @@ NutritionTemplates::receiveNutritionTemplate(const ScAddr &idLink) {
       ScType::NodeVar >> DIET_ALIAS,
       ScType::EdgeDCommonVar >> ID_LINK_TYPE_RELATION_PAIR_ALIAS, idLink,
       ScType::EdgeAccessVarPosPerm >> ID_LINK_TYPE_ACCESS_ARC_ALIAS,
-      NutritionKeynodes::nrel_diet_id);
+      commonModule::Keynodes::nrel_id);
 
   NutritionTemplate->TripleWithRelation(
       DIET_ALIAS,

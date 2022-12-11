@@ -23,7 +23,7 @@ ScAddrVector UserSearcher::searchUserByLogin(const ScAddr &loginLink) {
 
   if (!registeredLogin.IsValid()) {
     SC_LOG_DEBUG("UserSearcher: User not found");
-      SC_LOG_DEBUG("UserSearcher: finish");
+    SC_LOG_DEBUG("UserSearcher: finish");
     return {};
   }
 

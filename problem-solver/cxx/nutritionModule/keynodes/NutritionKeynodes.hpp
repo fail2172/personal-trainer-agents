@@ -46,9 +46,6 @@ public:
   SC_PROPERTY(Keynode("concept_nutrition_id"), ForceCreate)
   static ScAddr concept_nutrition_id;
 
-  SC_PROPERTY(Keynode("nrel_diet_id"), ForceCreate)
-  static ScAddr nrel_diet_id;
-
   SC_PROPERTY(Keynode("nrel_breakfast"), ForceCreate)
   static ScAddr nrel_breakfast;
 

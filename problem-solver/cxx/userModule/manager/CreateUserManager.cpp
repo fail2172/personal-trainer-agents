@@ -27,7 +27,8 @@ CreateUserManager::manage(const ScAddrVector &processParameters) const {
         utils::ExceptionInvalidParams,
         "CreateUserManager: User with this login already exists");
 
-  ScAddrVector answerVector = userGenerator->createUser(loginLink, passwordLink);
+  ScAddrVector answerVector =
+      userGenerator->createUser(loginLink, passwordLink);
 
   SC_LOG_DEBUG("CreateUserManager: finish");
 

@@ -21,5 +21,8 @@ public:
 
   SC_PROPERTY(Keynode("concept_processed_entity"), ForceCreate)
   static ScAddr action_deactivated;
+
+  SC_PROPERTY(Keynode("nrel_id"), ForceCreate)
+  static ScAddr nrel_id;
 };
 } // namespace commonModule

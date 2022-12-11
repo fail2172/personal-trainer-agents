@@ -3,15 +3,15 @@
  * Author: Nikita Semchenkov Andreevich
  */
 
-#include "CreateNutritionManager.hpp"
 #include "sc-agents-common/utils/GenerationUtils.hpp"
 #include "sc-agents-common/utils/IteratorUtils.hpp"
+
+#include "CreateNutritionManager.hpp"
 
 using namespace nutritionModule;
 
 CreateNutritionManager::CreateNutritionManager(ScMemoryContext *context)
     : AgentManager(context) {
-
   this->nutritionGenerator = std::make_unique<NutritionGenerator>(context);
 }
 

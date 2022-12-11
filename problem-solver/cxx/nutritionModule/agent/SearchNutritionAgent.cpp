@@ -18,7 +18,7 @@ SC_AGENT_IMPLEMENTATION(SearchNutritionAgent) {
   if (checkActionClass(actionAddr) == SC_FALSE)
     return SC_RESULT_OK;
 
-  SC_LOG_DEBUG("SearchNutritionAgent:  started");
+  SC_LOG_DEBUG("SearchNutritionAgent:  start");
 
   ScAddrVector answerVector;
   initFields();
@@ -34,7 +34,7 @@ SC_AGENT_IMPLEMENTATION(SearchNutritionAgent) {
   } catch (utils::ScException &) {
     utils::AgentUtils::finishAgentWork(&m_memoryCtx, actionAddr, answerVector,
                                        false);
-    SC_LOG_ERROR("SearchNutritionAgent:  finished with exception");
+    SC_LOG_ERROR("SearchNutritionAgent: finished with exception");
     return SC_RESULT_ERROR;
   }
 

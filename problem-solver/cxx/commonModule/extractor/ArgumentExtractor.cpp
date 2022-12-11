@@ -3,9 +3,9 @@
  * Author: Artsiom Salauyou
  */
 
-#include "ArgumentExtractor.hpp"
-
 #include "sc-agents-common/utils/IteratorUtils.hpp"
+
+#include "ArgumentExtractor.hpp"
 
 using namespace commonModule;
 

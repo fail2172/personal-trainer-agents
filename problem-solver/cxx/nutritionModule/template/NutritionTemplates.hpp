@@ -9,7 +9,6 @@
 #include "sc-memory/sc_template.hpp"
 
 namespace nutritionModule {
-
 class NutritionTemplates {
 public:
   static std::string const DIET_ALIAS;

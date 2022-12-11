@@ -9,8 +9,10 @@
 #include <sc-memory/sc_memory.hpp>
 
 #include "generator/IdGenerator.hpp"
-#include "searcher/NutritionSearcher.hpp"
+
 #include "template/NutritionTemplates.hpp"
+
+#include "searcher/NutritionSearcher.hpp"
 
 namespace nutritionModule {
 class NutritionGenerator {
@@ -27,5 +29,4 @@ public:
                                 const ScAddrVector &productsLunch,
                                 const ScAddrVector &productsDinner);
 };
-
 } // namespace nutritionModule

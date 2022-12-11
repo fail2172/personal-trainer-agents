@@ -1,20 +1,24 @@
 set(SOURCES
-        "keynodes/NutritionKeynodes.cpp"
-        "NutritionModule.cpp"
         "agent/CreateNutritionAgent.cpp"
-        "manager/CreateNutritionManager.cpp"
+        "agent/SearchNutritionAgent.cpp"
         "generator/NutritionGenerator.cpp"
+        "keynodes/NutritionKeynodes.cpp"
+        "manager/CreateNutritionManager.cpp"
         "searcher/NutritionSearcher.cpp"
+        "template/NutritionTemplates.cpp"
+        "NutritionModule.cpp"
         )
 
 set(HEADERS
         "agent/CreateNutritionAgent.hpp"
+        "agent/SearchNutritionAgent.hpp"
+        "generator/NutritionGenerator.hpp"
         "keynodes/NutritionKeynodes.hpp"
-        "NutritionModule.hpp"
         "manager/CreateNutritionManager.hpp"
         "searcher/NutritionSearcher.hpp"
-        "generator/NutritionGenerator.hpp"
-        agent/SearchNutritionAgent.cpp agent/SearchNutritionAgent.hpp template/NutritionTemplates.cpp template/NutritionTemplates.hpp)
+        "template/NutritionTemplates.hpp"
+        "NutritionModule.hpp"
+        )
 
 include_directories(
         ${CMAKE_CURRENT_LIST_DIR}
@@ -36,7 +40,3 @@ target_link_libraries(
 )
 
 sc_codegen_ex(nutritionModule ${CMAKE_CURRENT_LIST_DIR} ${CMAKE_CURRENT_LIST_DIR}/generated)
-
-#if (${SC_BUILD_TESTS})
-#    include(${CMAKE_CURRENT_LIST_DIR}/test/tests.cmake)
-#endif ()

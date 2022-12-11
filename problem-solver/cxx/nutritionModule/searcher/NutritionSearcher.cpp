@@ -3,8 +3,9 @@
  * Author: Nikita Semchenkov Andreevich
  */
 
-#include "NutritionSearcher.hpp"
 #include "keynodes/NutritionKeynodes.hpp"
+
+#include "NutritionSearcher.hpp"
 
 using namespace nutritionModule;
 

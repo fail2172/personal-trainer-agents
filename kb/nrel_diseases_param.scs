@@ -1,0 +1,7 @@
+nrel_diseases_param
+<- sc_node_norole_relation;
+<- relation;;
+
+nrel_disease_list
+<- sc_node_norole_relation;
+<- relation;;

@@ -5,9 +5,11 @@
 
 #pragma once
 
-#include "handler/LinkHandler.hpp"
 #include <sc-memory/sc_addr.hpp>
 #include <sc-memory/sc_memory.hpp>
+
+#include "handler/LinkHandler.hpp"
+
 namespace commonModule {
 class IdGenerator {
 private:
@@ -17,7 +19,7 @@ private:
 public:
   explicit IdGenerator(ScMemoryContext *context);
 
-  ScAddr createId(ScAddr const &idType);
+  ScAddr createId(ScAddr const &idClass);
 };
 
 } // namespace commonModule

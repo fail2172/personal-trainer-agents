@@ -58,5 +58,4 @@ public:
   SC_PROPERTY(Keynode("nrel_dinner"), ForceCreate)
   static ScAddr nrel_dinner;
 };
-
 } // namespace nutritionModule

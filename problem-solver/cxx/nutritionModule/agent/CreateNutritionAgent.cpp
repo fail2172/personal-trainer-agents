@@ -17,7 +17,7 @@ SC_AGENT_IMPLEMENTATION(CreateNutritionAgent) {
   if (checkActionClass(actionAddr) == SC_FALSE)
     return SC_RESULT_OK;
 
-  SC_LOG_DEBUG("CreateNutritionAgent: started");
+  SC_LOG_DEBUG("CreateNutritionAgent: start");
 
   ScAddrVector answerVector;
   initFields();
@@ -46,7 +46,7 @@ SC_AGENT_IMPLEMENTATION(CreateNutritionAgent) {
   utils::AgentUtils::finishAgentWork(&m_memoryCtx, actionAddr, answerVector,
                                      true);
 
-  SC_LOG_DEBUG("CreateNutritionAgent: finished");
+  SC_LOG_DEBUG("CreateNutritionAgent: finish");
 
   return SC_RESULT_OK;
 }

@@ -24,5 +24,4 @@ public:
 
   ScAddrVector manage(ScAddrVector const &processParameters) const override;
 };
-
 } // namespace nutritionModule

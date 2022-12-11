@@ -7,7 +7,6 @@
 #include "keynodes/NutritionKeynodes.hpp"
 
 namespace nutritionModule {
-
 std::string const NutritionTemplates::DIET_ALIAS = "_diet_alias";
 std::string const NutritionTemplates::ID_LINK_TYPE_RELATION_PAIR_ALIAS =
     "_id_link_type_relation_pair_alias";
@@ -70,5 +69,4 @@ NutritionTemplates::receiveNutritionTemplate(const ScAddr &idLink) {
 
   return NutritionTemplate;
 }
-
 } // namespace nutritionModule

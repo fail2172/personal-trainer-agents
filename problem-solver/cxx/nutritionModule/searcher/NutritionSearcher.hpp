@@ -5,10 +5,12 @@
 
 #pragma once
 
-#include "searcher/IdLinkSearcher.hpp"
-#include "template/NutritionTemplates.hpp"
 #include <sc-memory/sc_addr.hpp>
 #include <sc-memory/sc_memory.hpp>
+
+#include "searcher/IdLinkSearcher.hpp"
+
+#include "template/NutritionTemplates.hpp"
 
 namespace nutritionModule {
 class NutritionSearcher {

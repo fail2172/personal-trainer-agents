@@ -4,6 +4,8 @@ set(SOURCES
         "keynodes/Keynodes.cpp"
         "utils/ActionUtils.cpp"
         "CommonModule.cpp"
+        "generator/IdGenerator.cpp"
+        "searcher/IdLinkSearcher.cpp"
         )
 
 set(HEADERS
@@ -13,6 +15,8 @@ set(HEADERS
         "manager/AgentManager.hpp"
         "utils/ActionUtils.hpp"
         "CommonModule.hpp"
+        "generator/IdGenerator.hpp"
+        "searcher/IdLinkSearcher.hpp"
         )
 
 include_directories(

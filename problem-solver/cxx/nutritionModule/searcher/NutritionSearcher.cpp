@@ -5,6 +5,8 @@
 
 #include "keynodes/NutritionKeynodes.hpp"
 
+#include "keynodes/Keynodes.hpp"
+
 #include "NutritionSearcher.hpp"
 
 using namespace nutritionModule;
@@ -49,7 +51,7 @@ ScAddrVector NutritionSearcher::searchNutrition(const ScAddr &idLink) {
 
   ScAddrVector resultVector = {
       idLink,
-      NutritionKeynodes::nrel_diet_id,
+      commonModule::Keynodes::nrel_id,
       NutritionKeynodes::nrel_breakfast,
       NutritionKeynodes::nrel_lunch,
       NutritionKeynodes::nrel_dinner,

@@ -3,9 +3,12 @@
  * Author: Nikita Semchenkov Andreevich
  */
 
-#include "NutritionGenerator.hpp"
-#include "keynodes/NutritionKeynodes.hpp"
 #include "sc-agents-common/utils/CommonUtils.hpp"
+
+#include "keynodes/Keynodes.hpp"
+#include "keynodes/NutritionKeynodes.hpp"
+
+#include "NutritionGenerator.hpp"
 
 using namespace nutritionModule;
 
@@ -63,7 +66,7 @@ NutritionGenerator::createFoodIntake(const ScAddrVector &productsBreakfast,
       NutritionKeynodes::nrel_breakfast,
       NutritionKeynodes::nrel_lunch,
       NutritionKeynodes::nrel_dinner,
-      NutritionKeynodes::nrel_diet_id,
+      commonModule::Keynodes::nrel_id,
       id};
 
   resultConstruction.push_back(context->CreateEdge(
